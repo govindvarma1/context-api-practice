@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { Cart } from "../Context";
 
 export default function Header() {
+  const { cart } = useContext(Cart);
   return (
     <div>
       <ul className="nav">
@@ -9,7 +11,7 @@ export default function Header() {
           <NavLink to="/">Home</NavLink>
         </li>
         <li className="prod">
-          <NavLink to="/cart"> Cart</NavLink>
+          <NavLink to="/cart"> Cart ({cart.length})</NavLink>
         </li>
       </ul>
     </div>

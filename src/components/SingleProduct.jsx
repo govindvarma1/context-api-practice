@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Cart } from "../Context";
 
-export default function SingleProduct({ prod, cart, setCart }) {
+export default function SingleProduct({ prod }) {
+  const { cart, setCart } = useContext(Cart);
   return (
     <div className="products">
       <img src={prod.image} alt={prod.name} />
